@@ -1,0 +1,30 @@
+
+<div class="container">
+  <form class="row g-3">
+    <div class="col-auto">
+      <input type="search" class="form-control mr-sm-2" id="inputPassword2" placeholder="search">
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+    </div>
+  </form>
+</div>
+
+<div class="container text-center flex_content">
+
+  <div class="row" *ngFor="let f of listFiles | paginate: { itemsPerPage: size, currentPage: p }"  >
+    <div class="col col-lg-2 margin_card">
+      <div class="card" style="width: 10rem;" >
+
+        <div class="card-body" >
+          <h5 class="card-title">{{f.fileName}}</h5>
+          <a class="card-text"  [href]="'http://localhost:8080/downloadfile/'+f.id"><i class="bi bi-file-earmark"></i></a>
+          <p class="card-text">{{f.uploadDate | date :'short' }}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+<pagination-controls class="position" (pageChange)="p = $event"></pagination-controls>

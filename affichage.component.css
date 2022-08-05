@@ -1,0 +1,21 @@
+.container{
+  margin-top:5em ;
+}
+.flex_content{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+.margin_card{
+  margin: 12px;
+}
+.position{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top:5em ;
+}
